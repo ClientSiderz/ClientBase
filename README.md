@@ -7,5 +7,5 @@ How to setup ClientBase.
 3. Place files in ur folder
 4. run decompile.bat
 5. open your IDE
-6. Add a extra library from %website%
+6. Add a extra library from https://github.com/ClientSiderz/ClientBase-Extra-Libraries
 7. replace the src with ClientBase
