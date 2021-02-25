@@ -1,6 +1,7 @@
 package me.clientsiders.clientbase.module;
 
 import me.clientsiders.clientbase.module.impl.misc.Example;
+import me.clientsiders.clientbase.module.impl.render.ClickGUI;
 import me.clientsiders.clientbase.module.impl.render.HUD;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class ModuleManager {
     public ModuleManager() {
         modules.add(new HUD());
         modules.add(new Example());
+        modules.add(new ClickGUI());
     }
 
     //GET MODULE BY NAME
