@@ -60,7 +60,7 @@ public class ModeButton extends Component {
 		if(isMouseOnButton(mouseX, mouseY) && button == 0 && this.parent.open) {
 			int maxIndex = set.getOptions().size();
 
-			if(modeIndex + 1 > maxIndex)
+			if(modeIndex + 1 >= maxIndex)
 				modeIndex = 0;
 			else
 				modeIndex++;
