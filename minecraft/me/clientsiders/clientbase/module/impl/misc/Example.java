@@ -39,15 +39,16 @@ public class Example extends Module {
     //MOTION UPDATE
     @EventTarget
     public void onMotion(EventMotionUpdate event) {
-        // PRE MOTION
-        if(event.getEventType() == EventType.PRE) {
-
-            //PUT SHIT HERE
-        }
-        // POST MOTION
-        if(event.getEventType() == EventType.POST) {
-
-            //PUT SHIT HERE
+        switch(event.getEventType()) {
+            // PRE MOTION
+            case PRE: {
+                //PUT SHIT HERE
+                break;
+            }
+            // POST MOTION
+            case POST: {
+                //PUT SHIT HERE
+            }
         }
     }
     //2D RENDER EVENT
