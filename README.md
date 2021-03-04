@@ -12,7 +12,7 @@ How to setup ClientBase.
 
 
 
-Credits:
+Credits
 Lemon (Click GUI)
 MintyCodes (Alt Login)
 DarkMagician6 (Event Manager)
