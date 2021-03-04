@@ -9,3 +9,11 @@ How to setup ClientBase.
 5. open your IDE
 6. Add a extra library from https://github.com/ClientSiderz/ClientBase-Extra-Libraries
 7. replace the src with ClientBase
+
+
+
+Credits:
+1. Lemon (Click GUI)
+2. MintyCodes (Alt Login)
+3. DarkMagician6 (Event Manager)
+4. Hexeption (Optifine)
