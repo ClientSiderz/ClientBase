@@ -1,6 +1,7 @@
 package me.clientsiders.clientbase.module;
 
 import me.clientsiders.clientbase.module.impl.misc.Example;
+import me.clientsiders.clientbase.module.impl.movement.Sprint;
 import me.clientsiders.clientbase.module.impl.render.ClickGUI;
 import me.clientsiders.clientbase.module.impl.render.HUD;
 
@@ -15,6 +16,7 @@ public class ModuleManager {
         modules.add(new HUD());
         modules.add(new Example());
         modules.add(new ClickGUI());
+        modules.add(new Sprint());
     }
 
     //GET MODULE BY NAME

@@ -10,9 +10,7 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import org.lwjgl.opengl.GL11;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class HUD extends Module {
     FontRenderer fr = mc.fontRendererObj;
@@ -38,11 +36,12 @@ public class HUD extends Module {
                 toggledModules.add(m);
             }
         }
-        int y = 0;
+        toggledModules.sort((module1, module2) -> (fr.getStringWidth(module2.getDisplayName()) - fr.getStringWidth(module1.getDisplayName())));
+        int y = 2;
         for(Module m : toggledModules) {
-            Gui.drawRect(sr.getScaledWidth() - fr.getStringWidth(m.getDisplayName()) - 2, y, sr.getScaledWidth(), y + 8, 0x90000000);
-            fr.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - fr.getStringWidth(m.getDisplayName()) - 1, y, -1);
-            y += 8;
+            Gui.drawRect(sr.getScaledWidth() - fr.getStringWidth(m.getDisplayName()) - 3, y, sr.getScaledWidth(), y + 10, 0x90000000);
+            fr.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - fr.getStringWidth(m.getDisplayName()) - 1, y + 1, -1);
+            y += 10;
         }
     }
 }
