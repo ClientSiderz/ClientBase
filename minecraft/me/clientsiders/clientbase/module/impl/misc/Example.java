@@ -34,7 +34,9 @@ public class Example extends Module {
 
     //UPDATE EVENT
     @EventTarget
-    public void onUpdate(EventUpdate event) {}
+    public void onUpdate(EventUpdate event) {
+        //PUT SHIT HERE
+    }
 
     //MOTION UPDATE
     @EventTarget
@@ -53,32 +55,66 @@ public class Example extends Module {
     }
     //2D RENDER EVENT
     @EventTarget
-    public void onRender(EventRender2D event) {}
+    public void onRender(EventRender2D event) {
+        //PUT SHIT HERE
+    }
 
     //3D RENDER EVENT
     @EventTarget
-    public void onRender(EventRender3D event) {}
+    public void onRender(EventRender3D event) {
+        //PUT SHIT HERE
+    }
 
     //SEND PACKET EVENT
     @EventTarget
-    public void onPacket(EventSendPacket event) {}
+    public void onPacket(EventSendPacket event) {
+        //PUT SHIT HERE
+
+        //TARGET A PACKET
+        //if(event.getPacket() instanceof <Any Packet>) {
+            //PUT SHIT HERE
+
+            //CANCEL A PACKET
+            //event.setCancelled(true);
+
+            //SEND A PACKET
+            //event.setPacket(new <Any Packet>());
+        //}
+
+    }
 
     //RECEIVE PACKET EVENT
     @EventTarget
-    public void onPacket(EventReceivePacket event) {}
+    public void onPacket(EventReceivePacket event) {
+        //PUT SHIT HERE
+
+        //TARGET A PACKET
+//        if(event.getPacket() instanceof <Any Packet>) {
+        //PUT SHIT HERE
+
+        //CANCEL A PACKET
+        //event.setCancelled(true);
+    }
 
     //KEYBOARD EVENT
     @EventTarget
-    public void onKey(EventKeyboard event) {}
+    public void onKey(EventKeyboard event) {
+        //GET A KEY
+        //if(event.getKeyCode() == <Any Key>) {
+            //PUT SHIT HERE
+        //}
+    }
 
     //WHEN YOU ENABLE THE MODULE
     @Override
     public void onEnable() {
         super.onEnable();
+        //PUT SHIT HERE
     }
     //WHEN YOU DISABLE THE MODULE
     @Override
     public void onDisable() {
         super.onDisable();
+        //PUT SHIT HERE
     }
 }

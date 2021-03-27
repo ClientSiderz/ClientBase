@@ -9,6 +9,7 @@ package me.clientsiders.clientbase.utils;
 import net.minecraft.client.Minecraft;
 
 public class MovementUtils {
+    //IS MOVING
     public static boolean isMoving() {
         if(Minecraft.getMinecraft().gameSettings.keyBindForward.isKeyDown()
                 || Minecraft.getMinecraft().gameSettings.keyBindBack.isKeyDown()

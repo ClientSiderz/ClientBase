@@ -4,13 +4,22 @@ import me.clientsiders.clientbase.Client;
 import net.minecraft.client.Minecraft;
 
 public class Module {
+    //MINECRAFT VARIABLE SOO YOU CAN EASIER DO SHIT
     protected Minecraft mc = Minecraft.getMinecraft();
 
+    //NAME AND DISPLAY NAME VARIABLE
     private String name, displayName;
+
+    //KEY VARIABLE
     public int key;
+
+    //CATEGORY VARIABLE
     private Category category;
+
+    //TOGGLED VARIABLE
     private boolean toggled;
 
+    //CONSTRUCTOR
     public Module(String name, int key, Category category) {
         this.name = name;
         this.key = key;
@@ -19,13 +28,20 @@ public class Module {
         setup();
     }
 
+    //ON ENABLE
     public void onEnable() {
         Client.INSTANCE.eventManager.register(this);
     }
+
+    //ON DISABLE
     public void onDisable() {
         Client.INSTANCE.eventManager.unregister(this);
     }
+
+    //ON TOGGLE
     public void onToggle() {}
+
+    //JUST TOGGLE
     public void toggle() {
         toggled = !toggled;
         onToggle();
@@ -35,6 +51,7 @@ public class Module {
             onDisable();
     }
 
+    //GETTERS AND SETTERS
     public String getName() {
         return name;
     }
