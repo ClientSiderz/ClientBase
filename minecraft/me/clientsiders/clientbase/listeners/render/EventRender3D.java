@@ -1,8 +1,8 @@
 package me.clientsiders.clientbase.listeners.render;
 
-import com.darkmagician6.eventapi.events.Event;
+import me.clientsiders.clientbase.listeners.Event;
 
-public final class EventRender3D implements Event {
+public final class EventRender3D extends Event {
     private final float partialTicks;
 
     public EventRender3D(float partialTicks) {

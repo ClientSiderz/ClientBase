@@ -6,7 +6,7 @@ package me.clientsiders.clientbase.module.impl.movement;
     Made at 03/26/2021
 */
 
-import com.darkmagician6.eventapi.EventTarget;
+import com.google.common.eventbus.Subscribe;
 import me.clientsiders.clientbase.listeners.motion.EventUpdate;
 import me.clientsiders.clientbase.module.Category;
 import me.clientsiders.clientbase.module.Module;
@@ -17,7 +17,7 @@ public class Sprint extends Module {
         super("Sprint", 0, Category.MOVEMENT);
     }
 
-    @EventTarget
+    @Subscribe
     public void onUpdate(EventUpdate event) {
         if(MovementUtils.isMoving() && !mc.thePlayer.isCollidedHorizontally) {
             mc.thePlayer.setSprinting(true);

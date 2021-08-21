@@ -1,6 +1,5 @@
 package net.minecraft.client;
 
-import com.darkmagician6.eventapi.EventManager;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -1927,8 +1926,8 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     }
                     else
                     {
-                        EventKeyboard event = new EventKeyboard(k);
-                        EventManager.call(event);
+                        //TODO Event Keyboard
+                        Client.INSTANCE.eventBus.post(new EventKeyboard(k));
                         if (k == 1)
                         {
                             this.displayInGameMenu();

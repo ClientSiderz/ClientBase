@@ -9,14 +9,11 @@ package me.clientsiders.clientbase.utils;
 import net.minecraft.client.Minecraft;
 
 public class MovementUtils {
-    //IS MOVING
+    //Movement Check for players
     public static boolean isMoving() {
-        if(Minecraft.getMinecraft().gameSettings.keyBindForward.isKeyDown()
+        return Minecraft.getMinecraft().gameSettings.keyBindForward.isKeyDown()
                 || Minecraft.getMinecraft().gameSettings.keyBindBack.isKeyDown()
                 || Minecraft.getMinecraft().gameSettings.keyBindRight.isKeyDown()
-                || Minecraft.getMinecraft().gameSettings.keyBindLeft.isKeyDown()) {
-            return true;
-        }
-        return false;
+                || Minecraft.getMinecraft().gameSettings.keyBindLeft.isKeyDown();
     }
 }

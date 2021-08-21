@@ -8,10 +8,10 @@ import me.clientsiders.clientbase.module.impl.render.HUD;
 import java.util.ArrayList;
 
 public class ModuleManager {
-    //MODULES VARIABLE
+    //Module Array
     private ArrayList<Module> modules = new ArrayList<Module>();
 
-    //REGISTER MODULES
+    //Module Registration
     public ModuleManager() {
         modules.add(new HUD());
         modules.add(new Example());
@@ -19,7 +19,7 @@ public class ModuleManager {
         modules.add(new Sprint());
     }
 
-    //GET MODULE BY NAME
+    //Get Module by Name
     public Module getModule(final String name) {
         for (final Module m : modules) {
             if (!m.getName().equalsIgnoreCase(name)) {
@@ -29,12 +29,12 @@ public class ModuleManager {
         }
         return null;
     }
-    //GET MODULES
+    //Get All Modules
     public ArrayList<Module> getModules() {
         return modules;
     }
 
-    //GET MODULES IN CATEGORY
+    //Get Modules in a Category
     public ArrayList<Module> getModulesInCategory(Category categoryIn){
         ArrayList<Module> mods = new ArrayList<Module>();
         for(Module m : this.modules){

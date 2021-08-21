@@ -1,6 +1,5 @@
 package net.minecraft.network;
 
-import com.darkmagician6.eventapi.EventManager;
 import com.google.common.collect.Queues;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.netty.bootstrap.Bootstrap;
@@ -34,6 +33,7 @@ import java.util.Queue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.crypto.SecretKey;
 
+import me.clientsiders.clientbase.Client;
 import me.clientsiders.clientbase.listeners.packet.EventReceivePacket;
 import me.clientsiders.clientbase.listeners.packet.EventSendPacket;
 import net.minecraft.util.ChatComponentText;
@@ -158,14 +158,14 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
             {
                 //TODO Receive Packet Event
                 EventReceivePacket event = new EventReceivePacket(p_channelRead0_2_);
-                EventManager.call(event);
+                Client.INSTANCE.eventBus.post(event);
+                //Only Cancels Server Packets
                 if(event.isCancelled()) return;
+
                 p_channelRead0_2_.processPacket(this.packetListener);
             }
-            catch (ThreadQuickExitException var4)
-            {
-                ;
-            }
+            catch (ThreadQuickExitException ignored)
+            {}
         }
     }
 
@@ -184,8 +184,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
     {
         //TODO Send Packet Event
         EventSendPacket event = new EventSendPacket(packetIn);
-        EventManager.call(event);
+        Client.INSTANCE.eventBus.post(event);
+        //Only Cancels Client Packets
         if(event.isCancelled()) return;
+
         if (this.isChannelOpen())
         {
             this.flushOutboundQueue();

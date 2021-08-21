@@ -1,9 +1,9 @@
 package me.clientsiders.clientbase.listeners.motion;
 
-import com.darkmagician6.eventapi.events.Event;
+import me.clientsiders.clientbase.listeners.Event;
 import me.clientsiders.clientbase.listeners.EventType;
 
-public class EventMotionUpdate implements Event {
+public class EventMotionUpdate extends Event {
     private double x;
     private double y;
     private double z;

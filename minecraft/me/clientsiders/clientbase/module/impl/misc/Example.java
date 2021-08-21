@@ -1,10 +1,9 @@
 package me.clientsiders.clientbase.module.impl.misc;
 
-import com.darkmagician6.eventapi.EventTarget;
+import com.google.common.eventbus.Subscribe;
 import lemongui.settings.Setting;
 import me.clientsiders.clientbase.Client;
 import me.clientsiders.clientbase.listeners.EventKeyboard;
-import me.clientsiders.clientbase.listeners.EventType;
 import me.clientsiders.clientbase.listeners.motion.EventMotionUpdate;
 import me.clientsiders.clientbase.listeners.motion.EventUpdate;
 import me.clientsiders.clientbase.listeners.packet.EventReceivePacket;
@@ -32,89 +31,89 @@ public class Example extends Module {
 
     }
 
-    //UPDATE EVENT
-    @EventTarget
+    //Update Event
+    @Subscribe
     public void onUpdate(EventUpdate event) {
-        //PUT SHIT HERE
+        //Put Stuff here
     }
 
-    //MOTION UPDATE
-    @EventTarget
+    //Motion Update
+    @Subscribe
     public void onMotion(EventMotionUpdate event) {
         switch(event.getEventType()) {
-            // PRE MOTION
+            //Pre Motion
             case PRE: {
-                //PUT SHIT HERE
+                //Put Stuff here
                 break;
             }
-            // POST MOTION
+            //Post Motion
             case POST: {
-                //PUT SHIT HERE
+                //Put Stuff here
             }
         }
     }
-    //2D RENDER EVENT
-    @EventTarget
+    //2D Render Event
+    @Subscribe
     public void onRender(EventRender2D event) {
-        //PUT SHIT HERE
+        //Put Stuff here
     }
 
-    //3D RENDER EVENT
-    @EventTarget
+    //3D Render Event
+    @Subscribe
     public void onRender(EventRender3D event) {
-        //PUT SHIT HERE
+        //Put Stuff here
     }
 
-    //SEND PACKET EVENT
-    @EventTarget
+    //Send Packet Event
+    @Subscribe
     public void onPacket(EventSendPacket event) {
-        //PUT SHIT HERE
+        //Put Stuff here
 
-        //TARGET A PACKET
+        //Targets A Client Packet
         //if(event.getPacket() instanceof <Any Packet>) {
-            //PUT SHIT HERE
+            //Put Stuff here
 
-            //CANCEL A PACKET
+            //Cancels the targeted Client Packet
             //event.setCancelled(true);
 
-            //SEND A PACKET
+            //Send A Packet
             //event.setPacket(new <Any Packet>());
         //}
 
     }
 
-    //RECEIVE PACKET EVENT
-    @EventTarget
+    //Receive Packet Event
+    @Subscribe
     public void onPacket(EventReceivePacket event) {
-        //PUT SHIT HERE
+        //Put Stuff here
 
-        //TARGET A PACKET
+        //Targets a Server Packet
 //        if(event.getPacket() instanceof <Any Packet>) {
-        //PUT SHIT HERE
+        //Put Stuff here
 
-        //CANCEL A PACKET
+        //Cancels the targeted Server Packet
         //event.setCancelled(true);
     }
 
-    //KEYBOARD EVENT
-    @EventTarget
+    //Keyboard Event
+    @Subscribe
     public void onKey(EventKeyboard event) {
-        //GET A KEY
+        //Get a Key
         //if(event.getKeyCode() == <Any Key>) {
-            //PUT SHIT HERE
+            //Put stuff here
         //}
     }
 
-    //WHEN YOU ENABLE THE MODULE
+    //When you enable the module
     @Override
     public void onEnable() {
         super.onEnable();
-        //PUT SHIT HERE
+        //Put stuff here
     }
-    //WHEN YOU DISABLE THE MODULE
+    //When you disable the module
     @Override
     public void onDisable() {
         super.onDisable();
-        //PUT SHIT HERE
+        //Put stuff here
     }
 }

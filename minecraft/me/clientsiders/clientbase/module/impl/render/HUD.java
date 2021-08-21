@@ -1,6 +1,6 @@
 package me.clientsiders.clientbase.module.impl.render;
 
-import com.darkmagician6.eventapi.EventTarget;
+import com.google.common.eventbus.Subscribe;
 import me.clientsiders.clientbase.Client;
 import me.clientsiders.clientbase.listeners.render.EventRender2D;
 import me.clientsiders.clientbase.module.Category;
@@ -17,7 +17,7 @@ public class HUD extends Module {
         toggle();
     }
 
-    @EventTarget
+    @Subscribe
     public void onRender(EventRender2D event) {
         ScaledResolution sr = new ScaledResolution(mc);
         //WATERMARK

@@ -4,22 +4,22 @@ import me.clientsiders.clientbase.Client;
 import net.minecraft.client.Minecraft;
 
 public class Module {
-    //MINECRAFT VARIABLE SOO YOU CAN EASIER DO SHIT
+    //Minecraft Variable
     protected Minecraft mc = Minecraft.getMinecraft();
 
-    //NAME AND DISPLAY NAME VARIABLE
+    //Name Variables
     private String name, displayName;
 
-    //KEY VARIABLE
+    //Key Variable
     public int key;
 
-    //CATEGORY VARIABLE
+    //Category Variable
     private Category category;
 
-    //TOGGLED VARIABLE
+    //Toggle Variable
     private boolean toggled;
 
-    //CONSTRUCTOR
+    //Constructor
     public Module(String name, int key, Category category) {
         this.name = name;
         this.key = key;
@@ -28,20 +28,20 @@ public class Module {
         setup();
     }
 
-    //ON ENABLE
+    //On Enable
     public void onEnable() {
-        Client.INSTANCE.eventManager.register(this);
+        Client.INSTANCE.eventBus.register(this);
     }
 
-    //ON DISABLE
+    //On Disable
     public void onDisable() {
-        Client.INSTANCE.eventManager.unregister(this);
+        Client.INSTANCE.eventBus.unregister(this);
     }
 
-    //ON TOGGLE
+    //On Toggle
     public void onToggle() {}
 
-    //JUST TOGGLE
+    //Toggle Functions
     public void toggle() {
         toggled = !toggled;
         onToggle();
@@ -51,7 +51,15 @@ public class Module {
             onDisable();
     }
 
-    //GETTERS AND SETTERS
+    public void setToggled(boolean toggled) {
+        this.toggled = toggled;
+        if(toggled)
+            onEnable();
+        else
+            onDisable();
+    }
+
+    //Getters and Setters
     public String getName() {
         return name;
     }
@@ -80,8 +88,4 @@ public class Module {
         this.displayName = displayName;
     }
     public void setup() {}
-
-    public void setToggled(boolean toggled) {
-        this.toggled = toggled;
-    }
 }

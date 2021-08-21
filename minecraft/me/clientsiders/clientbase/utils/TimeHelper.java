@@ -1,34 +1,34 @@
 package me.clientsiders.clientbase.utils;
 
 public class TimeHelper {
-    //LAST TIME
+    //Last Time
     private long lastTime = getCurrentTime();
 
-    //RESET
+    //Reset the counter
     public TimeHelper() {
         reset();
     }
-    //GET CURRENT TIME
+    //Get the current time
     public long getCurrentTime() {
         return System.nanoTime() / 1000000;
     }
 
-    //GET LAST TIME
+    //Get the last time
     public long getLastTime() {
         return lastTime;
     }
 
-    //GET DIFFERENCE
+    //Get difference
     public long getDifference() {
         return getCurrentTime() - lastTime;
     }
 
-    //RESET
+    //Resets the Counter
     public void reset() {
         lastTime = getCurrentTime();
     }
 
-    //HAS REACHED
+    //Time Counter
     public boolean hasReached(long milliseconds) {
         return getDifference() >= milliseconds;
     }

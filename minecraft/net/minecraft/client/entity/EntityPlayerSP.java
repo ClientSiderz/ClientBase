@@ -1,6 +1,5 @@
 package net.minecraft.client.entity;
 
-import com.darkmagician6.eventapi.EventManager;
 import me.clientsiders.clientbase.Client;
 import me.clientsiders.clientbase.listeners.EventType;
 import me.clientsiders.clientbase.listeners.motion.EventMotionUpdate;
@@ -174,9 +173,8 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
-            //TODO EventUpdate
-            EventUpdate event = new EventUpdate();
-            EventManager.call(event);
+            //TODO Event Update
+            Client.INSTANCE.eventBus.post(new EventUpdate());
             super.onUpdate();
 
             if (this.isRiding())
@@ -187,9 +185,8 @@ public class EntityPlayerSP extends AbstractClientPlayer
             else
             {
                 this.onUpdateWalkingPlayer();
-                //POST MOTION
-                EventMotionUpdate event2 = new EventMotionUpdate(EventType.POST);
-                EventManager.call(event2);
+                //TODO POST Motion Update
+                Client.INSTANCE.eventBus.post(new EventMotionUpdate(EventType.POST));
             }
         }
     }
@@ -199,9 +196,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
-        //PRE MOTION
+        //TODO PRE Motion Update
         EventMotionUpdate event = new EventMotionUpdate(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch, this.onGround, EventType.PRE);
-        EventManager.call(event);
+        Client.INSTANCE.eventBus.post(event);
         boolean flag = this.isSprinting();
 
         if (flag != this.serverSprintState)

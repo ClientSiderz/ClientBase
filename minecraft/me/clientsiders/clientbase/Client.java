@@ -1,8 +1,8 @@
 package me.clientsiders.clientbase;
 
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import lemongui.settings.SettingsManager;
-import com.darkmagician6.eventapi.EventManager;
-import com.darkmagician6.eventapi.EventTarget;
 import me.clientsiders.clientbase.listeners.EventKeyboard;
 import me.clientsiders.clientbase.module.Module;
 import me.clientsiders.clientbase.module.ModuleManager;
@@ -10,42 +10,43 @@ import org.lwjgl.opengl.Display;
 
 public class Client {
 
-    //NAME AND VERSION VARIABLES
-    public static String name = "ClientBase", version = "1.0.0";
+    //Name and Version
+    public static String name = "ClientBase", version = "1.1";
 
-    //INSTANCE
+    //Instance
     public static Client INSTANCE = new Client();
 
-    //MODULE MANAGER VARIABLE
+    //Module Manager Variable
     public ModuleManager moduleManager;
 
-    //SETTINGS MANAGER VARIABLE
+    //Settings Manager Variable
     public SettingsManager settingsManager;
 
-    //EVENT MANAGER VARIABLE
-    public EventManager eventManager;
+    //Event Bus Variable
+    public EventBus eventBus;
 
-    //ON STARTUP
+    //On startup
     public void startClient() {
-        //SET TITLE
+        eventBus = new EventBus();
+        //Set game title
         Display.setTitle(name + " " + version);
-        //INITIALIZES THE SETTINGS MANAGER
+        //Initializes Setting Manager
         settingsManager = new SettingsManager();
-        //INITIALIZES THE MODULE MANAGER
+        //Initializes Module Manager
         moduleManager = new ModuleManager();
-        //REGISTER THE EVENT MANAGER
-        eventManager.register(this);
+        //Registers the Event Bus
+        eventBus.register(this);
     }
 
-    //ON SHUTDOWN
+    //On shutdown
     public void stopClient() {
-        //UNREGISTER THE EVENT MANAGER
-        eventManager.unregister(this);
+        //Unregisters the event bus
+        eventBus.unregister(this);
     }
 
-    //WHEN YOU PRESS ON THE MODULE IT WILL ENABLE IT
-    @EventTarget
-    public void onKey(EventKeyboard event) {
+    //Module Keybind Reaction Event
+    @Subscribe
+    public void onKeyboard(EventKeyboard event) {
         for(Module m : moduleManager.getModules()) {
             if(event.getKeyCode() == m.getKey()) {
                 m.toggle();

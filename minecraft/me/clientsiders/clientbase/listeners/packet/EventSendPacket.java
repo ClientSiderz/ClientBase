@@ -1,9 +1,9 @@
 package me.clientsiders.clientbase.listeners.packet;
 
-import com.darkmagician6.eventapi.events.callables.EventCancellable;
+import me.clientsiders.clientbase.listeners.Event;
 import net.minecraft.network.Packet;
 
-public class EventSendPacket extends EventCancellable {
+public class EventSendPacket extends Event {
     private Packet packet;
 
     public EventSendPacket(final Packet packet) {

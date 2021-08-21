@@ -1,8 +1,8 @@
 package me.clientsiders.clientbase.listeners.render;
 
-import com.darkmagician6.eventapi.events.Event;
+import me.clientsiders.clientbase.listeners.Event;
 
-public final class EventRender2D implements Event {
+public final class EventRender2D extends Event {
     private final float width, height;
     public EventRender2D(float width, float height) {
         this.width = width;

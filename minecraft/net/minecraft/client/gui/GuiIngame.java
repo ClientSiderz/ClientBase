@@ -1,6 +1,5 @@
 package net.minecraft.client.gui;
 
-import com.darkmagician6.eventapi.EventManager;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -160,9 +159,8 @@ public class GuiIngame extends Gui
         {
             this.renderTooltip(scaledresolution, partialTicks);
         }
-        //TODO 2D Renderer
-        EventRender2D event = new EventRender2D(scaledresolution.getScaledWidth(), scaledresolution.getScaledHeight());
-        EventManager.call(event);
+        //TODO Event Render 2D
+        Client.INSTANCE.eventBus.post(new EventRender2D(scaledresolution.getScaledWidth(), scaledresolution.getScaledHeight()));
 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(icons);

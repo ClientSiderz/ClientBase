@@ -1,6 +1,5 @@
 package net.minecraft.client.renderer;
 
-import com.darkmagician6.eventapi.EventManager;
 import com.google.common.base.Predicates;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
@@ -1875,11 +1874,10 @@ public class EntityRenderer implements IResourceManagerReloadListener
         if (Reflector.ForgeHooksClient_dispatchRenderLast.exists())
         {
             this.mc.mcProfiler.endStartSection("forge_render_last");
-            Reflector.callVoid(Reflector.ForgeHooksClient_dispatchRenderLast, new Object[] {renderglobal, Float.valueOf(partialTicks)});
+            Reflector.callVoid(Reflector.ForgeHooksClient_dispatchRenderLast, renderglobal, partialTicks);
         }
-        //TODO 3D Renderer
-        EventRender3D event = new EventRender3D(partialTicks);
-        EventManager.call(event);
+        //TODO Event Render 3D
+        Client.INSTANCE.eventBus.post(new EventRender3D(partialTicks));
 
         this.mc.mcProfiler.endStartSection("hand");
         boolean flag2 = ReflectorForge.renderFirstPersonHand(this.mc.renderGlobal, partialTicks, pass);
