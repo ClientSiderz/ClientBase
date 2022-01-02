@@ -15,5 +15,4 @@ How to setup ClientBase.
 Credits:
 1. Lemon (Click GUI)
 2. MintyCodes (Alt Login)
-3. DarkMagician6 (Event Manager)
-4. Hexeption (Optifine)
+3. Hexeption (Optifine)
