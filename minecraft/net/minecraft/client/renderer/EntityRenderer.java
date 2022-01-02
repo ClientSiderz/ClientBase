@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.listeners.render.EventRender3D;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.listeners.render.EventRender3D;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.material.Material;

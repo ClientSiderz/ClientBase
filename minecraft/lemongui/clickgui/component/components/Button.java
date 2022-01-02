@@ -11,8 +11,8 @@ import lemongui.clickgui.component.components.sub.Keybind;
 import lemongui.clickgui.component.components.sub.ModeButton;
 import lemongui.clickgui.component.components.sub.Slider;
 import lemongui.settings.Setting;
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.module.Module;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.module.Module;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;

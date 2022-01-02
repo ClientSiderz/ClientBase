@@ -1,9 +1,9 @@
 package net.minecraft.client.entity;
 
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.listeners.EventType;
-import me.clientsiders.clientbase.listeners.motion.EventMotionUpdate;
-import me.clientsiders.clientbase.listeners.motion.EventUpdate;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.listeners.EventType;
+import club.meowclient.homobase.listeners.motion.EventMotionUpdate;
+import club.meowclient.homobase.listeners.motion.EventUpdate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;

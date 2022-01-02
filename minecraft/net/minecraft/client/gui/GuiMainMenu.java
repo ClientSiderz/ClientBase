@@ -74,7 +74,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
     /** An array of all the paths to the panorama pictures. */
     private static final ResourceLocation[] titlePanoramaPaths = new ResourceLocation[] {new ResourceLocation("textures/gui/title/background/panorama_0.png"), new ResourceLocation("textures/gui/title/background/panorama_1.png"), new ResourceLocation("textures/gui/title/background/panorama_2.png"), new ResourceLocation("textures/gui/title/background/panorama_3.png"), new ResourceLocation("textures/gui/title/background/panorama_4.png"), new ResourceLocation("textures/gui/title/background/panorama_5.png")};
-    public static final String field_96138_a = "Please click " + EnumChatFormatting.UNDERLINE + "here" + EnumChatFormatting.RESET + " for more information.";
+    public static final String field_96138_a = "Please, Fuck me harder";
     private int field_92024_r;
     private int field_92023_s;
     private int field_92022_t;
@@ -94,7 +94,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
         try
         {
-            List<String> list = Lists.<String>newArrayList();
+            List<String> list = Lists.newArrayList();
             bufferedreader = new BufferedReader(new InputStreamReader(Minecraft.getMinecraft().getResourceManager().getResource(splashTexts).getInputStream(), Charsets.UTF_8));
             String s;
 
@@ -110,15 +110,10 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
             if (!list.isEmpty())
             {
-                while (true)
-                {
-                    this.splashText = (String)list.get(RANDOM.nextInt(list.size()));
+                do {
+                    this.splashText = list.get(RANDOM.nextInt(list.size()));
 
-                    if (this.splashText.hashCode() != 125780783)
-                    {
-                        break;
-                    }
-                }
+                } while (this.splashText.hashCode() == 125780783);
             }
         }
         catch (IOException var12)
@@ -145,8 +140,8 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
         if (!GLContext.getCapabilities().OpenGL20 && !OpenGlHelper.areShadersSupported())
         {
-            this.openGLWarning1 = I18n.format("title.oldgl1", new Object[0]);
-            this.openGLWarning2 = I18n.format("title.oldgl2", new Object[0]);
+            this.openGLWarning1 = I18n.format("title.oldgl1");
+            this.openGLWarning2 = I18n.format("title.oldgl2");
             this.openGLWarningLink = "https://help.mojang.com/customer/portal/articles/325948?ref=game";
         }
     }
@@ -542,7 +537,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
         float f = 1.8F - MathHelper.abs(MathHelper.sin((float)(Minecraft.getSystemTime() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
         f = f * 100.0F / (float)(this.fontRendererObj.getStringWidth(this.splashText) + 32);
         GlStateManager.scale(f, f, f);
-        this.drawCenteredString(this.fontRendererObj, this.splashText, 0, -8, -256);
+        this.drawCenteredString(this.fontRendererObj, "Homo Base", 0, -8, -256);
         GlStateManager.popMatrix();
         String s = "Minecraft 1.8.8";
 

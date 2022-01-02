@@ -1,6 +1,6 @@
 package lemongui.settings;
 
-import me.clientsiders.clientbase.module.Module;
+import club.meowclient.homobase.module.Module;
 
 import java.util.ArrayList;
 

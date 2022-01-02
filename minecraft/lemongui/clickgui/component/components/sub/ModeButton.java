@@ -3,7 +3,7 @@ package lemongui.clickgui.component.components.sub;
 import lemongui.clickgui.component.Component;
 import lemongui.clickgui.component.components.Button;
 import lemongui.settings.Setting;
-import me.clientsiders.clientbase.module.Module;
+import club.meowclient.homobase.module.Module;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;

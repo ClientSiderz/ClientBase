@@ -378,6 +378,17 @@ public class FontRenderer implements IResourceManagerReloadListener
     }
 
     /**
+       Draws a specified outlined string.
+     */
+    public void drawOutlinedString(String text, int x, int y, int color) {
+        drawString(text, x - 1, y, 0xff000000);
+        drawString(text, x + 1, y, 0xff000000);
+        drawString(text, x, y - 1, 0xff000000);
+        drawString(text, x, y + 1, 0xff000000);
+        drawString(text, x, y, color);
+    }
+
+    /**
      * Draws the specified string.
      */
     public int drawString(String text, float x, float y, int color, boolean dropShadow)

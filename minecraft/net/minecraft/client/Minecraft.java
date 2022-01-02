@@ -36,8 +36,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
 
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.listeners.EventKeyboard;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.listeners.EventKeyboard;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MusicTicker;

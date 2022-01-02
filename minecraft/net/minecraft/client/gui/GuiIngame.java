@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.listeners.render.EventRender2D;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.listeners.render.EventRender2D;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;

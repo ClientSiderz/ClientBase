@@ -33,9 +33,9 @@ import java.util.Queue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.crypto.SecretKey;
 
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.listeners.packet.EventReceivePacket;
-import me.clientsiders.clientbase.listeners.packet.EventSendPacket;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.listeners.packet.EventReceivePacket;
+import club.meowclient.homobase.listeners.packet.EventSendPacket;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.CryptManager;

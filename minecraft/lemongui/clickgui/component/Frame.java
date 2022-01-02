@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import lemongui.clickgui.ClickGui;
 import lemongui.clickgui.component.components.Button;
-import me.clientsiders.clientbase.Client;
-import me.clientsiders.clientbase.module.Category;
-import me.clientsiders.clientbase.module.Module;
+import club.meowclient.homobase.Client;
+import club.meowclient.homobase.module.Category;
+import club.meowclient.homobase.module.Module;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.FontRenderer;

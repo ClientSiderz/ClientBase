@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import lemongui.clickgui.component.Component;
 import lemongui.clickgui.component.Frame;
-import me.clientsiders.clientbase.module.Category;
+import club.meowclient.homobase.module.Category;
 import net.minecraft.client.gui.GuiScreen;
 
 //Your Imports
@@ -16,7 +16,7 @@ public class ClickGui extends GuiScreen {
 	public static int color = 0xffff0000;
 	
 	public ClickGui() {
-		this.frames = new ArrayList<Frame>();
+		this.frames = new ArrayList<>();
 		int frameX = 5;
 		for(Category category : Category.values()) {
 			Frame frame = new Frame(category);
@@ -41,7 +41,7 @@ public class ClickGui extends GuiScreen {
 			}
 		}
 	}
-	
+
 	@Override
     protected void mouseClicked(final int mouseX, final int mouseY, final int mouseButton) throws IOException {
 		for(Frame frame : frames) {
